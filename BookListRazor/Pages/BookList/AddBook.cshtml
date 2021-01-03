@@ -1,0 +1,48 @@
+﻿@page
+@model BookListRazor.Pages.BookList.AddBookModel
+
+<br/>
+<div class="border container input-group" style="padding:30px">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row" id="bookName">
+            <div class="col-3">
+                <label asp-for="Book.Name">Name</label>
+            </div>
+            <div class="col-10 row">
+                <input class="form-control" asp-for="Book.Name" />
+            </div>
+            <span asp-validation-for="Book.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group row" id="bookAuthor">
+            <div class="col-3">
+                <label asp-for="Book.Author">Author</label>
+            </div>
+            <div class="col-10 row">
+                <input class="form-control" asp-for="Book.Author" />
+            </div>
+            <span asp-validation-for="Book.Author" class="text-danger"></span>
+        </div>
+        <div class="form-group row" id="bookISBN">
+            <div class="col-3">
+                <label asp-for="Book.ISBN">ISBN</label>
+            </div>
+            <div class="col-10 row">
+                <input class="form-control" asp-for="Book.ISBN" />
+            </div>
+            <span asp-validation-for="Book.ISBN" class="text-danger"></span>
+        </div>
+        <div class="btn-group" style="padding-top:5px">
+            <div class="col-5">
+                <input type="submit" class="btn btn-primary" value="Add Entry" />
+            </div>
+            <div class="col-7 offset-1">
+                <a class="btn bg-success text-white" asp-page="Index">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{ 
+    <partial name="_ValidationScriptsPartial" />
+}
